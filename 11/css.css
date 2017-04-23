@@ -1,0 +1,50 @@
+.clearfix::after{
+	content: "";
+	display: table;
+	width: 0;
+	height: 0;
+	clear: both;
+	font-size: 0;
+}
+.menu{
+	width: 1200px;
+	height: 45px;
+	background-color: #FF7F50;
+	border-radius: 6px;
+	margin: 0 auto;
+}
+ul{
+	padding: 0;
+	list-style: none;
+}
+li{
+	float: left;
+	position: relative;
+	margin: 0 15px;
+}
+a{
+	text-decoration: none;
+	color: #222;
+	display: inline-block;
+	padding: 10px 20px 1px 10px;
+	margin: 10px 0;
+}
+.menu li ul{
+	position: absolute;
+	width: 100px;
+	height: 0px;
+	background: rgba(232,298,155,0.7);
+	border-radius: 0px;
+	box-shadow: inset 5px 6px 14px rgba(120,450,130,0.6);
+	opacity: 0;
+	transition:height 0.5s;
+}
+.menu li:hover ul{
+	height: 200px;
+	opacity: 1;
+}
+.menu li ul li{
+	float: left;
+	margin: -5px 12px;
+}
+
