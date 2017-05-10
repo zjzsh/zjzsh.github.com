@@ -1,0 +1,42 @@
+body{
+	background-color: lemonchiffon;
+}
+.a{
+	width: 500px;
+	height: 400px;
+	background-color:lightblue ;
+	position: absolute;
+	text-align: center;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: 150px auto;
+}
+.a input{
+	width: 70%;
+	height: 25px;
+	margin: 15px 0px;
+	border: 1px dashed lightcoral;
+	text-indent: 1em;
+	transition: all .5s;
+	outline: none;
+}
+.a input:hover{
+	border: 1px solid lightcoral;
+	box-shadow: inset 0px 0px 6px 0px rgba(0,0,0,.8);
+}
+.a input[type="submit"]{
+	width: 35%;
+	height: 35px;
+	text-indent: 0em;
+	opacity: 0.4;
+	border: none;
+	background-color: rgba(455,5,65,.8);
+	color: white;
+}
+.a input[type="submit"]:hover{
+	opacity: 1;
+	background-color: rgba(0,0,0,.8);
+	letter-spacing: 5px;
+}
