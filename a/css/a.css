@@ -1,0 +1,38 @@
+* {
+	box-sizing: border-box;
+}
+.clearfix::after{
+	content: "";
+	display: table;
+	clear: both;
+}
+img{
+	width: 80px;
+	height: auto;
+}
+header{
+	position: relative;
+	max-width: 1200px;
+	top: 50px;
+	margin:auto;
+}
+nav{
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+header nav ul li{
+	float: left;
+	list-style: none;
+	margin: 20px 30px;
+}
+header nav ul li a{
+	text-decoration: none;
+	padding: 20px;
+	border: 1px solid transparent;
+    transition: color .5s,border .5s;
+	color: #000000;
+}
+header nav ul li a:hover{
+	border: 1px solid #000;
+}
