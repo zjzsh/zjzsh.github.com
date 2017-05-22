@@ -1,0 +1,111 @@
+* {
+	box-sizing: border-box;
+}
+.clearfix::after{
+	content: "";
+	display: table;
+	clear: both;
+}
+a{
+	color: #fff;
+	text-decoration: none;
+}
+p{
+	color: #FFFFFF;
+}
+h2{
+	color: #FFFFFF;
+}
+img{
+	width: 140px;
+}
+body{
+	background: url(../img/1.jpg) no-repeat fixed;
+	background-size:100% ;
+}
+ul{
+	list-style: none;
+	padding: 0;
+}
+.a{
+	max-width: 1200px;
+	margin: auto;
+}
+header{
+	
+	position: relative;
+	top: 50px;
+}
+.menu{
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+header ul li{
+	float: left;
+	list-style: none;
+	margin:70px 50px;
+}
+header ul li a{
+	padding: 20px;
+	transition: color .5s,border .5s,all .5s;
+}
+header ul li a:hover{
+	border: 1px solid #fff;
+	font-size: 30px;
+}
+main section{
+	margin: 100px 0px;
+}
+.fav li{
+	float: left;
+	width: 160px;
+	height: 49px;
+	line-height: 49px;
+	margin: 20px 30px 20px 0px;
+	background: rgba(100,200,300,.5);
+	text-align: center;
+	border-radius: 8px;
+	cursor: pointer;
+	transition: background-color .5s,border-radius .5s;
+}
+.fav li:hover{
+	border-radius: 0px;
+	background: rgba(300,200,100,.8);
+}
+.b figure img{
+	width:500px;
+	height: 300px;
+	width:100%;
+	cursor: pointer;
+	-webkit-filter: grayscale(.7);
+	transition: webkit-filter .5s;
+}
+.b figure:hover img{
+	-webkit-filter: grayscale(0);
+}
+.b figure{
+	width: 30%;
+	margin: calc(10% / 6);
+	overflow: hidden;
+	float: left;
+	position: relative;
+}
+.b figure figcaption{
+	width: 100%;
+	height: 30px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	text-align: center;
+	margin: auto;
+	opacity: 0;
+	transition: opacity .5s;
+	
+}
+.b figure:hover figcaption{
+	opacity: 1;
+}
+
