@@ -1,0 +1,83 @@
+*{
+	box-sizing: border-box;
+}
+.clearfix::after{
+	content: "";
+	display: table;
+	clear: both;
+}
+ul{
+	list-style: none;
+	padding: 0;	
+}
+a{
+	text-decoration: none;
+}
+.container{
+	max-width: 1200px;
+	margin: auto;
+}
+header.on{
+	padding: 3px 0;
+	background-color: rgba(0,0,0,.7);
+}
+header{
+	width: 100%;
+	background-color: rgba(0,0,0,0);
+	position: fixed;
+}
+header .logo{
+	float: left;
+}
+header .menu{
+	float: right;
+}
+header .menu ul li{
+	float: left;
+	margin: 0px 20px;
+	padding: 20px 0px;
+}
+header .logo img{
+	vertical-align: middle;
+}
+header .logo span{
+	vertical-align: middle;
+	font-size: 5em;
+	font-family: 'Niconne', cursive;
+}
+header .menu li a{
+	color: #fff;
+	text-shadow: 2px 2px 5px rgba(0,0,0,.4);
+	transition: color .5s;
+}
+header .menu li.active a,
+header .menu li a:hover{
+	color: #ff6600;
+}
+.shouye{
+	color: #fff;
+	background: url(../img/1.jpg) no-repeat center top;
+	background-size: cover;
+}
+.shouye .caption{
+	position: absolute;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	top: 0;
+	margin: auto;
+	width: 600px;
+	max-height: 150px;
+	text-align: center;
+	text-shadow: 1px 1px 1px rgba(0,0,0,.8);
+}
+.shouye .caption strong{
+		color: #339BEB;
+}
+.shouye .caption p span{
+	background-color:rgba(255,255,255,.5);
+	color: #000;
+	padding: 3px;
+	font-style: normal;
+	text-shadow: none;
+}
