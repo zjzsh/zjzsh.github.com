@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			*,
+			*::before,
+			*::after{
+				box-sizing: border-box;
+			}
+			.waiwei{
+				width: 250px;
+				min-height: 240px;
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				transform: translate(-50%,-50%);
+			}
+			.waiwei h3{
+				text-align: center;
+			}
+			.waiwei .anniu{
+				position: relative;
+				height: 40px;
+			}
+			.waiwei .anniu input{
+				border: 1px solid #000;
+				height: 30px;
+				position: absolute;
+				cursor: pointer;
+			}
+			.waiwei .anniu input[disabled]{
+				border: 1px solid #f00;
+			}
+			.waiwei .anniu #num{
+				width: 200px;
+				height: 30px;
+				border-radius: 20px 0 0 20px;
+				left: 0;
+				text-indent: 1em;
+			}
+			.waiwei .anniu #tijiao,
+			.waiwei .anniu #chonglai{
+				width: 50px;
+				border-radius: 0 20px 20px 0;
+				right: 0;
+				border-left-width: 0px;
+			}
+			.waiwei .anniu #chonglai{
+				display: none;
+			}
+			.waiwei .anniu .top{
+				max-height: 200px;
+				overflow-y: auto;
+				font-size: 16px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="waiwei">
+			<h3>猜数字游戏</h3>
+			<div class="anniu">
+				<input type="number" id="num" placeholder="1-10之间输入数字："/>
+				<input type="button" id="tijiao" value="提交" />
+				<input type="button" id="chonglai" value="重来" />
+			</div>
+			<div class="top">
+				<div id="times">剩余次数：<span></span><br></div>
+				<div id="info">猜测历史：<br><span></span></div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			var onum=document.getElementById('num');
+			var otj=document.getElementById('tijiao');
+			var ocl=document.getElementById('chonglai');	
+			var info=document.getElementById("info");
+			var shu=6;
+			var sj=Math.floor(Math.random()*10+1);
+			otj.addEventListener("click",checktj);
+			function checktj(){
+				a=parseInt(onum.value);
+				shu--;
+				console.log(shu);
+				if (a>sj&&shu>0) {
+					info.innerHTML+="这次猜的"+a+",有点偏大<br>";
+				}
+				else if(a<sj&&shu>0){
+					info.innerHTML+="这次猜的"+a+",有点偏小<br>";
+				}
+				else if(a==sj&&shu>0){
+					info.innerHTML+="这次猜的"+a+",猜对了<br>";
+				}
+				if(shu==0){
+					info.innerHTML+="次数用完!";
+					otj.style.display="none";
+					ocl.style.display="block";
+				}
+			}
+			ocl.addEventListener("click",checkcl);
+			function checkcl(){
+				shu=6;
+				sj=Math.floor(Math.random()*10+1);
+				info.innerHTML="";
+				otj.style.display="block";
+				ocl.style.display="none";
+			}
+			
+		</script>
+	</body>
+</html>
