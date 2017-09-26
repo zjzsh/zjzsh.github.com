@@ -1,0 +1,41 @@
+*,
+*::before,
+*::after{
+	box-sizing: border-box;
+}
+#waiwei{
+	position: absolute;
+	width: 230px;
+	height: 365px;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%,-50%);
+	background: gray;
+}
+#waiwei h3{
+	text-align: center;
+}
+#waiwei h4{
+	text-align: center;
+}
+#waiwei #Input{
+	text-align: center;
+	position: relative;
+	height: 30px;
+}
+#Input input{
+	width: 50px;
+	height: 50px;
+	border: 1px solid #000;
+}
+#Input button{
+	width: 50px;
+	height: 50px;
+}
+#wenzi{
+	position: absolute;
+	width: 150px;
+	height: 500px;
+	left: 29%;
+	top: 50%;
+}
