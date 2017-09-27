@@ -1,0 +1,56 @@
+*{
+	box-sizing: border-box;
+}
+h1{
+	text-align: center;
+}
+#menu{
+	width: 500px;
+	height: 300px;
+	left: 50%;
+	top: 50%;
+	margin: auto;
+	text-align: center;
+}
+#menu .easy{
+	width: 150px;
+	height: 50px;
+	border: 1px solid #000;
+	border-radius: 20px 20px 20px 20px;
+	background: #fff;
+	display: block;
+	margin:30px 180px;
+	cursor: pointer;
+}
+#menu .medium{
+	width: 150px;
+	height: 50px;
+	border: 1px solid #000;
+	border-radius: 20px 20px 20px 20px;
+	background: #fff;
+	display: block;
+	margin:30px 180px;
+	cursor: pointer;
+}
+#menu .hard{
+	width: 150px;
+	height: 50px;
+	border: 1px solid #000;
+	border-radius: 20px 20px 20px 20px;
+	background: #fff;
+	display: block;
+	cursor: pointer;
+	margin:30px 180px;
+}
+#page{
+	width: 400px;
+	margin: auto;
+	text-align: center;
+}
+#page div{
+	text-align: left;
+	margin-left: 65px;
+}
+#page #return{
+	margin-right: -226px;
+}

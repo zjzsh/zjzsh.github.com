@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/css.css"/>
+	</head>
+	<body>
+		<h1>猜数字游戏</h1>
+		<div id="menu">
+			<input type="button" class="easy" id="easy" value="简单" />
+			<input type="button" class="medium" id="medium" value="中等" />
+			<input type="button" class="hard" id="hard" value="困难" />
+		</div>
+		<div id="page" style="display: none;">
+			<input type="text" id="num"  />
+			<button id="tijiao">提交</button>
+			<button id="chongzhi">重置</button>
+			<div id="times">剩余次数：6</div>	
+			<div id="lishi">历史纪录：</div>
+			<button id="return">返回</button>
+		</div>
+		<script type="text/javascript">
+			var oeasy=document.getElementById('easy');
+			var omedium=document.getElementById('medium');
+			var ohard=document.getElementById('hard');
+			var k=6;
+			var omenu=document.getElementById('menu');
+			var opage=document.getElementById('page');
+			var onum=document.getElementById('num');
+			var otijiao=document.getElementById('tijiao');
+			var ochongzhi=document.getElementById('chongzhi');
+			var otimes=document.getElementById('times');
+			var olishi=document.getElementById('lishi');
+			var oreturn=document.getElementById('return');
+			var shu;
+			var sj;
+ 			
+			oeasy.addEventListener("click",clicka);
+			omedium.addEventListener("click",clickb);
+			ohard.addEventListener("click",clickc);
+			oreturn.addEventListener("click",clickd);
+			otijiao.addEventListener("click",clicke);
+			ochongzhi.addEventListener("click",clickf);
+			function clicka(){
+				omenu.style.display="none";
+				opage.style.display="block";
+				onum.placeholder="1-10之间输一个数，6次机会";
+				shu=10;
+				sj=parseInt(Math.random()*(shu+1));
+			}
+			function clickb(){
+				omenu.style.display="none";
+				opage.style.display="block";
+				onum.placeholder="1-50之间输一个数，6次机会";
+				shu=50;
+				sj=parseInt(Math.random()*(shu+1));
+			}
+			function clickc(){
+				omenu.style.display="none";
+				opage.style.display="block";
+				onum.placeholder="1-100之间输一个数，6次机会";
+				shu=100;
+				sj=parseInt(Math.random()*(shu+1));
+			}
+			function clickd(){
+				omenu.style.display="block";
+				opage.style.display="none";
+			}
+			function closegame(){
+				onum.disabled="true";
+				omenu.style.display="none";
+				opage.style.display="block";
+			}
+			function clicke(){
+				k--;
+				a=onum.value;
+				console.log(a);
+				if(isNaN(a)){
+				olishi.innerHTML+="你输入的："+a+"不是数字！";
+				k++;
+				}
+				else if(a>sj&&k>0){
+					olishi.innerHTML+="这次输入的数："+a+"偏大";
+					otimes.innerHTML="剩余次数："+k;
+				}
+				else if(a<sj&&k>0){
+					olishi.innerHTML+="这次输入的数："+a+"偏小";
+					otimes.innerHTML="剩余次数："+k;
+				}
+				else if(a==sj&&k>0){
+					olishi.innerHTML+="你特么终于猜对了！";
+					closegame();
+				}
+				else if(k==0){
+					olishi.innerHTML+="次数用尽，要你何用";
+					otimes.innerHTML="剩余次数："+k;
+					closegame();
+				}
+			}
+			function clickf(){
+				sj=parseInt(Math.random()*(shu+1));
+				k=6;
+				onum.value="";
+				otimes.innerHTML="剩余次数：6";
+				olishi.innerHTML="历史纪录";
+				onum.disabled=false;
+			}
+
+		</script>
+	</body>
+</html>
