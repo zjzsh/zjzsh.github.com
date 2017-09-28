@@ -1,0 +1,21 @@
+.waiwei{
+	border: 1px solid #000;
+	width: 600px;
+	height: 250px;
+	left: 0;
+	right: 0;
+	margin: auto;
+}
+.waiwei h2{
+	text-align: center;
+}
+.waiwei button{
+	margin-left: 240px;
+	width: 100px;
+}
+.waiwei ul li{
+	list-style: none;
+}
+.neirong input{
+	width: 30px;
+}

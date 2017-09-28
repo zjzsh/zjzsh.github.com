@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/css.css"/>
+	</head>
+	<body>
+		<div class="waiwei">
+			<h2>抽奖</h2>
+			<button id="choujiang">点击</button>
+			<div class="neirong">
+				<ul>
+					<li><span>一等奖</span><input type="text" class="a"/></li>
+					<li><span>二等奖</span><input type="text" class="a"/><input type="text" class="a"/></li>
+					<li><span>三等奖</span><input type="text" class="a"/><input type="text" class="a"/><input type="text" class="a"/></li>
+				</ul>
+			</div>
+		</div>
+		<script type="text/javascript">
+			var a=document.getElementsByClassName('a');
+			var obutton=document.getElementById('choujiang');
+			var q=[];
+			var w=[];
+			for(var i=1;i<46;i++){
+				q[i-1]=i;
+			}
+			obutton.addEventListener('click',clicka);
+			function clicka(){
+				for(i=0;i<6;i++){
+					w[i]=Math.floor(Math.random()*46+1);
+				for(var j=0;j<i;j++){
+					if(w[j]==w[i])
+					i--;
+					}}
+				for(i=0;i<6;i++){
+					a[i].value=w[i];
+				}
+				
+			}
+		</script>
+	</body>
+</html>
