@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			.clock{
+				margin: auto;
+				width: 200px;
+				height: 200px;
+				background: url(img/clock.jpg) no-repeat;
+				background-size:100% ;
+				position: relative;
+			}
+			#hour{
+				width: 5px;
+				height: 40px;
+				background: #000;
+				position: absolute;
+				bottom: 100px;
+				left: 97.5px;
+				transform-origin:bottom;
+			}
+			#min{
+				width: 4px;
+				height: 50px;
+				background: #000;
+				position: absolute;
+				bottom: 100px;
+				left: 98px;
+				transform-origin:bottom;
+			}
+			#second{
+				width: 3px;
+				height: 60px;
+				background: #f00;
+				position: absolute;
+				bottom: 100px;
+				left: 98.5px;
+				transform-origin:bottom;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div class="clock">
+			<div id="hour">
+				
+			</div>
+			<div id="min">
+				
+			</div>
+			<div id="second">
+				
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var a=new Date;
+		var hour,min,second;
+		var oHour=document.getElementById("hour");
+		var oMin=document.getElementById("min");
+		var oSec=document.getElementById("second");
+		function fa(){
+			now=new Date;
+			hour=now.getSeconds()*6;
+			min=(now.getMinutes()+now.getSeconds()/60)*6;
+			second=(now.getHours()+now.getMinutes()/60+now.getSeconds()/3600)*30;
+			oHour.style.webkitTransform="rotate("+second+"deg)";
+			oMin.style.webkitTransform="rotate("+min+"deg)";
+			oSec.style.webkitTransform="rotate("+hour+"deg)";
+		}
+		fa();
+		setInterval(fa,1000);
+	</script>
+</html>
