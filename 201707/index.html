@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<input type="button"   value="1" />
+		<input type="button"  value="2" />
+		<input type="button" value="3" />
+		<input type="button" value="4" />
+		<input type="button"  value="5" />
+		<input type="button"   value="6" />
+	</body>
+	<script type="text/javascript">
+        var bu=document.querySelectorAll("input");
+        for (var i=0;i<bu.length;i++) {
+        	bu[i].addEventListener("click",(function  (index) {
+        	  return function  (e) {console.log('你单击了第'+index+'按钮')};
+        	}(i+1)));
+        }
+	</script>
+</html>
