@@ -1,0 +1,96 @@
+#content{
+	width: 100%;
+	border: 1px solid #00f;
+	position: absolute;
+}
+#content #shanghe #content-z,#zhuti,#content-f{
+	width: 200px;
+	height: 50px;
+	border: 1px solid #000;
+	float: left;
+}
+#content #shanghe #content-z #zhandui1,#zhandui2{
+	margin: 0px ;
+	text-align: center;
+}
+#content #shanghe #zhuti{
+	position: relative;
+	width: 400px;
+	height: 80px;
+	left: 18%;
+	top: 0%;
+}
+#content #shanghe #content-z{
+	height: 80px;
+}
+#content #shanghe #content-f{
+	float: right;
+	height: 80px;
+}
+#content #zhonghe{
+	position: absolute;
+	width: 100%;
+	border: 1px solid #0f0;
+}
+#content #zhonghe #weizhi1,#weizhi2,#times{
+	margin-top: 100px;
+	float: left;
+	width: 200px;
+	height: 200px;
+	border: 1px solid #f00;
+}
+#content #zhonghe #weizhi1{
+	height: 300px;
+}
+#content #zhonghe #weizhi1 ul{
+	margin: 7px -27px;
+	list-style: none;
+}
+#content #zhonghe #weizhi1 ul li{
+	padding: 2px;
+	font-size: 20px;
+}
+#content #zhonghe #weizhi2{
+	float: right;
+	height: 300px;
+}
+#content #zhonghe #weizhi2 ul{
+	margin: 7px -27px;
+	list-style: none;
+}
+#content #zhonghe #weizhi2 ul li{
+	padding: 2px;
+	font-size: 20px;
+}
+#content #zhonghe #times{
+	position: relative;
+	width: 400px;
+	height: 300px;
+	top: 0;
+	left: 18%;
+}
+#content #zhonghe #times span{
+	position: absolute;
+	top:28%;
+	bottom: 40%;
+	left:17%;
+	right: 20%;
+	font-size: 64px;
+	color: #fff;
+}
+#content #zhonghe #times img{
+	width: 250px;
+	height:250px;
+	display: block;
+	margin-left: 70px;
+}
+
+#content #zhonghe #times button{
+	margin-left: 60px;
+	margin-top: 10px;
+	width: 50px;
+	height: 30px;
+}
+#xiahe button{
+	margin-top: 500px;
+}

@@ -1,0 +1,36 @@
+body{
+	width: 100%;
+}
+
+#jmsr{
+	height: 400px;	
+	width: 800px;
+	margin-left: 250px;
+	border: 1px solid #000;
+	text-align: center;
+}
+#jmsr strong{
+	width: 120px;
+	display: inline-block;
+}
+#jmsr input{
+	height: 40px;
+	text-align: center;
+	margin-top: 40px;
+}	
+#jmsr #bianti{
+	width: 700px;
+	margin: auto;
+}
+#jmsr span{
+	font-size: 3em;
+	width: 50px;
+	height: 64px;
+	line-height: 64px;
+	margin-left:20px ;
+}
+#jmsr button{
+	margin-top: 70px;
+	width: 200px;
+	height: 50px;
+}

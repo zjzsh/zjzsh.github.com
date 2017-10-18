@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link class="cl" rel="stylesheet" type="text/css" href="css/css1.css" />
+		<link rel="stylesheet" type="text/css" href="css/css2.css"/>
+	</head>
+
+	<body>
+		<div id="jmsr">
+			<div id="bianti">
+				<strong>正方：</strong><input type="text" name="team1" id="team1" placeholder="请输入队名" />
+				<span>vs</span>
+				<strong>反方：</strong><input type="text" name="team2" id="team2" placeholder="请输入队名" />
+			</div>
+			<div id="bianti">
+				<strong>正方辩题：</strong><input type="text" name="team3" id="team3" placeholder="请输入观点" />
+				<span>vs</span>
+				<strong>反方辩题：</strong><input type="text" name="team4" id="team4" placeholder="请输入观点" />
+			</div>
+			<button class="que">确定</button>
+		</div>
+		<div id="content" style="display: none;">
+			<div id="shanghe">
+				<div id="content-z">
+					<h1 id="zhandui1"></h1></div>
+				<div id="zhuti">
+					<h2>健康管理的积分换购简历发给</h2></div>
+				<div id="content-f">
+					<h1 id="zhandui2"></h1></div>
+			</div>
+			<div id="zhonghe">
+				<div id="weizhi1">
+					<ul>
+						<li><strong>1号辩手:</strong>章三三</li>
+						<li><strong>2号辩手:</strong>章三三</li>
+						<li><strong>3号辩手:</strong>章三三</li>
+						<li><strong>4号辩手:</strong>章三三</li>
+					</ul>
+					<div>金额回复可见发货及时发货尽快恢复更何况看到结果看了国家开发机构</div>
+				</div>
+				<div id="times">
+					<span id="asd">
+						01:00:00
+					</span>
+					<img src="img/1.png" />
+					<button class="asd" >开始1</button>
+					<button class="asd" style="display: none;">开始2</button>
+					<button class="asd" style="display: none;">开始3</button>
+				</div>
+				<div id="weizhi2">
+					<ul>
+						<li><strong>1号辩手:</strong>章三三</li>
+						<li><strong>2号辩手:</strong>章三三</li>
+						<li><strong>3号辩手:</strong>章三三</li>
+						<li><strong>4号辩手:</strong>章三三</li>
+					</ul>
+					<div>金额回复可见发货及时发货尽快恢复更何况看到结果看了国家开发机构</div>
+				</div>
+			</div>
+			<div id="xiahe">
+				<button>下一步</button>
+			</div>
+		</div>
+		<script type="text/javascript">
+			var jmsr = document.getElementById("jmsr");
+			var content = document.getElementById("content");
+			//div的定义
+			var cl = document.getElementsByClassName("cl");
+			//css的定义
+			var que = document.getElementsByClassName("que");
+			que[0].addEventListener("click", fang1);
+
+			function fang1() {
+				var team1 = document.getElementById("team1").value;
+				var team2 = document.getElementById("team2").value;
+				var team3 = document.getElementById("team3").value;
+				var team4 = document.getElementById("team4").value;
+				zhandui1.innerText = team1;
+				zhandui2.innerText = team2;
+				jmsr.style.display = "none";
+				content.style.display = "block";
+				cl[0].href = "css/css2.css";
+			}
+			//确定按钮的定义
+
+			var zhandui1 = document.getElementById("zhandui1");
+			var zhandui2 = document.getElementById("zhandui2");
+			//第二页的队名
+
+			var asd = document.getElementById("asd");
+			var button = document.getElementsByClassName("asd");
+			var n = 6000;
+			//总时间
+			var x, y, z;
+			//分,秒,毫秒
+			button[0].addEventListener("click", kaishi);
+			button[1].addEventListener("click",tingzhi);
+			button[2].addEventListener("click",chongzhi);
+			function kaishi() {
+				tin = setInterval(fang2, 10);
+				button[1].style.display="block";
+				button[0].style.display="none";
+			}
+			//开始按钮
+			function tingzhi () {
+				button[2].style.display="block";
+				button[1].style.display="none";
+				clearInterval(tin);
+			}
+			//停止按钮
+			function chongzhi () {
+				n = 6000;
+				asd.innerText="01:00:00";
+				button[0].style.display="block";
+				button[2].style.display="none";
+			}
+			//重置按钮
+			function fang2() {
+				n=n-1;
+				x = Math.floor(n / 6000);
+				y = Math.floor((n - x * 6000)/100);
+				z = Math.floor(n - y * 100- x * 6000);
+				if(n<0){
+					asd.innerText="00:00:00";
+				}
+				else if(y<10&&z<10){
+					asd.innerText="0"+x+":"+"0"+y+":"+"0"+z;
+				}
+				else if(y>10&&z<10){
+					asd.innerText="0"+x+":"+y+":"+"0"+z;
+				}
+				else if(y<10&&z>10){
+					asd.innerText="0"+x+":"+"0"+y+":"+z;
+				}
+				else{
+					asd.innerText="0"+x+":"+y+":"+z;
+				}
+			}
+			//计时器
+		</script>
+	</body>
+
+</html>
