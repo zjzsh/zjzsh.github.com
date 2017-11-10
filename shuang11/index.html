@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			body {
+				background: url(img/2.png) no-repeat;	
+			}
+			.img {
+				position: absolute;
+				top: 36px;
+				left: 97px;
+				cursor: pointer;
+			}
+			.xian{
+				top: -20px;
+				position: relative;
+				margin: auto;
+				width: 2px;
+				height: 380px;
+				background-color: orange;
+				transform-origin: top;
+				animation: swing 2s infinite ease-in-out ;
+				z-index:10;
+			}
+			
+			@keyframes swing {
+				0% {
+					transform: rotate(20deg);
+				}
+				50% {
+					transform: rotate(-20deg);
+				}
+				100% {
+					transform: rotate(20deg);
+				}
+			}
+			.a{
+					position: relative;
+					top: 322px;
+					left: -150px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<img class="img" src="img/1.gif" alt="" />
+		<div class="xian"  style="display: none;">
+			<div><img class="a" src="img/3.png"/></div>
+		</div>
+		<script type="text/javascript">
+			var oxian=document.querySelector(".xian");
+			var oimg=document.querySelector(".img");
+			oimg.onclick=function() {
+				oimg.style.display="none";
+				oxian.style.display="block";
+			}
+		</script>
+</html>
