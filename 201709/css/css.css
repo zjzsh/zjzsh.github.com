@@ -1,0 +1,55 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+.menu{
+	width: 100%;
+	height: 50px;
+	background: #40acfc;
+	position: absolute;
+}
+.menu #logo{
+	position: relative;
+	color: #fff;
+	top: 10px;
+	left: 10px;
+	font-size: 2em;
+	transition: all .5s;
+}
+#nav{
+	width: 100px;
+	height: 600px;
+	background: #40ACFC;
+	list-style: none;
+}
+#nav li{
+	position: relative;
+	top: 70px;
+}
+#nav li.father{
+	width: 100%;
+	height: 50px;
+	line-height: 50px;
+	font-size: 20px;
+/*	border: 1px solid #000;*/
+	color: #fff;
+	cursor: pointer;
+}
+#nav li.father:hover{
+	background-color: #3cf;
+}
+.son{
+	width: 100px;
+	height: 50px;
+}
+.son li{
+	list-style: none;
+	width: 100%;
+	height: 20px;
+	text-align: center;
+	color: rgba(0,0,0,.5);
+	cursor: pointer;
+}
+.son li:hover{
+	background-color: #eee;
+}

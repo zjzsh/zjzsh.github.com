@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+		<link href="https://cdn.bootcss.com/normalize/7.0.0/normalize.min.css" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="css/css.css"/>
+	</head>
+	<body>
+		<div class="menu">
+			<div id="logo" class="fa fa-bars"></div>
+		</div>
+		<ul id="nav" style="display: none;">
+			    <li class="father">大菜单 <i class="fa fa-angle-right a"></i></li>
+				    <ul class="son" style="display: none;">
+				    	<li>小菜单</li>
+				    	<li>小菜单</li>
+				    	<li>小菜单</li>
+				    </ul>
+				<li class="father">大菜单 <i class="fa fa-angle-right a"></i></li>
+				    <ul class="son" style="display: none;">
+				    	<li>小菜单</li>
+				    	<li>小菜单</li>
+				    	<li>小菜单</li>
+				    </ul>
+				<li class="father">大菜单 <i class="fa fa-angle-right a"></i></li>
+				    <ul class="son" style="display: none;">
+				    	<li>小菜单</li>
+				    	<li>小菜单</li>
+				    	<li>小菜单</li>
+				    </ul>
+				<li class="father">大菜单 <i class="fa fa-angle-right a"></i></li>
+				    <ul class="son" style="display: none;">
+				    	<li>小菜单</li>
+				    	<li>小菜单</li>
+				    	<li>小菜单</li>
+				    </ul>
+				<li class="father">大菜单 <i class="fa fa-angle-right a"></i></li>
+				    <ul class="son" style="display: none;">
+				    	<li>小菜单</li>
+				    	<li>小菜单</li>
+				    	<li>小菜单</li>
+				    </ul>
+		</ul>
+	</body>
+	<script type="text/javascript">
+		var ologo=document.getElementById("logo");
+		var ofather=document.getElementsByClassName("father");
+		var onav=document.getElementById("nav");
+		var oson=document.getElementsByClassName("son");
+		var oa=document.getElementsByClassName("a");
+		ologo.addEventListener("click",function() {
+				if(onav.style.display=="none"){
+					onav.style.display="block";
+					ologo.style.transform="rotate(90deg)";
+				}
+				else{
+					onav.style.display="none";
+					ologo.style.transform="rotate(0deg)";
+				}
+			})
+		
+		for(i=0;i<=4;i++){
+				ofather[i].addEventListener("click",function(n) {
+					return function() {
+						if(oson[n].style.display=="none"){
+							oson[n].style.display="block";
+							oa[n].style.transform="rotate(90deg)"
+							oa[n].style.transition="all .5s"
+						}
+						else{
+							oson[n].style.display="none";
+							oa[n].style.transform="rotate(0deg)"
+							oa[n].style.transition="all .5s"
+						}
+					}
+				}(i));
+			}
+				
+	</script>
+</html>
