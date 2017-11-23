@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+		<style type="text/css">
+			#aa{
+				width: 100%;
+				height: 100%;
+				background:rgba(10,10,10,.5) ;
+				position: fixed;
+				left: 0;
+				top: 0;
+				display: none;
+			}
+			#aaa{
+				width: 500px;
+				height: 500px;
+				background-color: darkviolet;
+				margin: auto;
+				position: absolute;
+				border-radius:15px ;
+				left: 0;
+				right: 0;
+				top: 0;
+				bottom: 0;
+			}
+			#aaa i{
+				position: absolute;
+				font-size: 2em;
+				color: #fff;
+				right: 10px;
+				top: 0px;
+				cursor: pointer;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="a"><a href="#">模拟窗口</a></div>
+		<div id="aa">
+			<div id="aaa">
+				<i class="fa fa-close" id="q"></i>
+			</div>
+		</div>
+	</body>
+		<script type="text/javascript">
+			var oa=document.getElementById("a");
+			var oi=document.getElementById("q");
+			var oaa=document.getElementById("aa");
+			var oaaa=document.getElementById("aaa");
+			oa.addEventListener("click",function() {
+				oaa.style.display="block";
+				setTimeout(function(){
+         			 oaaa.style.display='block';
+     			 },500);
+			});
+			    
+			oi.addEventListener("click",function() {
+				oaaa.style.display="none";
+				oaa.style.display="none";
+			});
+		</script>
+</html>

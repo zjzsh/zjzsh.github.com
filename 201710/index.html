@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			.he {
+				width: 500px;
+				height: 500px;
+				background-color: darkviolet;
+				margin: auto;
+				position: absolute;
+				left: 0;
+				right: 0;
+				top: 0;
+				bottom: 0;
+				display: none;
+				z-index: 9999;
+			}
+			
+			.x {
+				position: absolute;
+				font-size: 2em;
+				color: #fff;
+				right: 10px;
+				top: 0px;
+				cursor: pointer;
+			}			
+			.ping {
+				width: 100%;
+				height: 100%;
+				position: fixed;
+				left: 0;
+				top: 0;
+				background-color: rgba(235,124, 375, .5);
+				z-index: 100;
+				display: none;
+				transition: all .5s;
+			}
+		</style>
+		<link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+	</head>
+
+	<body>
+		<div class="a"><a href="#">模拟窗口</a></div>
+		<script type="text/javascript">
+			var oa = document.getElementsByClassName('a');
+			var ohe, ox,oping;
+			if(oa.length >= 1) {
+				ohe = document.createElement("div");
+				ohe.className = "he";
+				document.body.appendChild(ohe);
+
+				ox = document.createElement("div");
+				ox.className = "x";
+				ox.innerHTML = "<i class='fa fa-close'></i>";
+				ohe.appendChild(ox);
+				
+				oping = document.createElement("div");
+				oping.className = "ping";
+				document.body.appendChild(oping);
+				
+				ox.addEventListener("click", function() {
+				oping.style.display = "none";
+				ohe.style.display = "none";
+			});
+			
+				oa[0].addEventListener("click", function() {
+				oping.style.display = "block";
+				ohe.style.display = "block";
+			});
+
+				
+			}		
+		</script>
+	</body>
+
+</html>
