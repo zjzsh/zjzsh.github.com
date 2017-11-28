@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			body{
+				text-align: center;
+			}
+			a{
+				display: inline-block;
+				margin: 100px;
+				position: relative;
+			}
+			span{
+				position: absolute;
+				width: 200px;
+				height: 50px;
+				line-height: 50px;
+				bottom: 60px;
+				left: -85px;
+				background: #000;
+				color: #fff;
+				display: none;
+			}
+			
+			.sanjiaoxing{
+				position: absolute;
+				bottom: 0px;
+				left: -15px;
+				width: 0px;
+				height: 0px;
+				border-bottom: 30px solid transparent;
+				border-top: 30px solid #000;
+				border-left: 30px solid transparent;
+				border-right: 30px solid transparent;
+				display: none;
+			}
+			a:hover span{
+				display: block;
+			}
+			a:hover .sanjiaoxing{
+				display: block;
+			}
+		</style>
+	</head>
+	<body>
+	<div class="a"><a href="#" class="tooltip" data-content='组件内容'>组件</a></div>
+	<div class="b">
+	<a href="#" class="tooltip" data-content='上'>上</a>
+	<a href="#" class="tooltip" data-content='下'>下</a>
+	<a href="#" class="tooltip" data-content='左'>左</a>
+	<a href="#" class="tooltip" data-content='右'>右</a>
+	</div>
+	<script type="text/javascript">
+		(function () {
+			var otip=document.querySelectorAll(".tooltip");
+			if(otip.length==0)
+				return;
+			for (var i = 0; i < otip.length; i++) {
+				var ospan=document.createElement("span");
+				ospan.innerHTML=otip[i].getAttribute('data-content');
+				otip[i].appendChild(ospan);
+				var osanjiaoxing=document.createElement("sanjiaoxing");
+				osanjiaoxing.className="sanjiaoxing";
+				otip[i].appendChild(osanjiaoxing);
+			}
+		})();
+	</script>
+	</body>
+</html>
