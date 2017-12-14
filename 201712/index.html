@@ -1,0 +1,67 @@
+
+
+
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body{
+				text-align: center;
+			}
+			.waihe{
+				border: 1px solid #000;
+				width: 500px;
+				margin:150px 150px;
+			}
+			
+			.menu {
+				padding: 0;
+				margin: 0;
+				overflow: hidden;
+			}
+			
+			.menu li {
+				list-style-type: none;
+				font-size: 12px;
+				line-height: 18px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="waihe">
+			<ul class="menu">
+				<li>1</li>
+				<li>2</li>
+				<li>3</li>
+				<li>4</li>
+				<li>5</li>
+				<li>6</li>
+				<li>7</li>
+			</ul>
+		</div>
+		<script type="text/javascript">
+			var oMenu = document.querySelector('.menu');
+			var oMenuItme = document.querySelectorAll('.menu li');
+			oMenu.style.height = '50px';
+			oMenu.innerHTML += oMenu.innerHTML;
+
+			function run() {
+				if(oMenu.scrollTop > 108) {
+					oMenu.scrollTop = 1;
+					setTimeout(run, 100);
+				} 
+				else {
+					oMenu.scrollTop++;
+					if(oMenu.scrollTop % 50 == 0)
+						setTimeout(run, 1000);
+					else
+						setTimeout(run, 100);
+				}
+			}
+			run();
+		</script>
+	</body>
