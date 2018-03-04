@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			:root{
+				--hover-width:75%;
+				--other-width:25%;
+				--speed:1000ms;
+			}
+			html,body{
+				margin: 0;
+				padding: 0;
+				width: 100%;
+				height: 100%;
+			}
+			.container{
+				position: relative;
+				width: 100%;
+				height: 100%;
+				background-color: #333;
+			}
+			.spilt{
+				position: absolute;
+				width: 50%;
+				height: 100%;
+				overflow: hidden;
+			}
+			.spilt.left{
+				left: 0;
+				background: url(img/designer.jpg) center center no-repeat;
+				background-size: cover;
+			}
+			.spilt.left::before{
+				position: absolute;
+				content: "";
+				width: 100%;
+				height: 100%;
+				background-color:rgba(223,29,29,.7) ;
+			}
+			.spilt.right{
+				right: 0;
+				background: url(img/programmer.png) center center no-repeat;
+				background-size: cover;
+			}
+			.spilt.right::before{
+				position: absolute;
+				content: "";
+				width: 100%;
+				height: 100%;
+				background-color:rgba(43,43,43,.8) ;
+			}
+			h1{
+				font-size: 4em;
+				color: #FFFFFF;
+				position: absolute;
+				left: 50%;
+				transform: translateX(-50%);
+				white-space: nowrap;
+				top: 20%;
+			}
+			.button{
+				display: block;
+				position: absolute;
+				left: 50%;
+				transform: translateX(-50%);
+				top: 42%;
+				height: 2.5rem;
+				padding-top: 1.3rem;
+				width: 15rem;
+				text-align: center;
+				color: #FFFFFF;
+				border: 0.2rem solid #fff;
+				font-weight: bold;
+				text-decoration: none;
+				text-transform: uppercase; /*字母大小写*/
+			}
+			.spilt.left .button:hover{
+				background-color: rgba(161,11,11,.3);
+				border-color:rgba(161,11,11,.3) ;
+			}
+			.spilt.right .button:hover{
+				background-color: rgba(92,92,92,.3);
+				border-color: rgba(92,92,92,.3);
+			}
+			.spilt.left, .spilt.right, .spilt.right::before, .spilt.left::before{
+				transition: var(--speed) all ease-in-out;
+			}
+			.hover-left .left{
+				width: var(--hover-width);
+			}
+			.hover-left .right{
+				width: var(--other-width);
+			}
+			.hover-left .right::before{
+				z-index: 2;
+			}
+			.hover-right .right{
+				width: var(--hover-width);
+			}
+			.hover-right .left{
+				width: var(--other-width);
+			}
+			.hover-right .left::before{
+				z-index: 2;
+			}
+			/*响应式*/
+			@media(max-width:800px){
+				h1{
+					font-size: 2rem;
+				}
+				.button{
+					width: 12rem;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="spilt left">
+				<h1>The Designer</h1>
+				<a href="#" class="button">Read More</a>
+			</div>
+			<div class="spilt right">
+				<h1>The Programmer</h1>
+				<a href="#" class="button">Read More</a>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var left=document.querySelector(".left");
+		var right=document.querySelector(".right");
+		var container=document.querySelector(".container");
+		left.addEventListener("mouseenter",()=>{
+			container.classList.add("hover-left");
+		});
+		left.addEventListener("mouseleave",()=>{
+			container.classList.remove("hover-left");
+		});
+		right.addEventListener("mouseenter",()=>{
+			container.classList.add("hover-right");
+		});
+		right.addEventListener("mouseleave",()=>{
+			container.classList.remove("hover-right");
+		});
+	</script>
+</html>
